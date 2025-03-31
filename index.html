@@ -3,10 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My First Website</title>
+    <title>LeBron James - The King</title>
     <link rel="stylesheet" href="style.css" />
+    <script>
+      function showQuote() {
+        const quotes = [
+          "You can't be afraid to fail. It's the only way you succeed.",
+          "I like criticism. It makes you strong.",
+          "Hard work beats talent when talent fails to work hard.",
+          "I treated it like every day was my last day with a basketball.",
+        ];
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById("quote").innerText = randomQuote;
+      }
+
+      function showSection(sectionId) {
+        const sections = document.querySelectorAll(".content-section");
+        sections.forEach((section) => (section.style.display = "none"));
+        document.getElementById(sectionId).style.display = "block";
+      }
+    </script>
   </head>
   <body>
-    <h1>Test.</h1>
+    <header>LeBron James - The King</header>
+    <nav>
+      <button onclick="showSection('bio')">Biography</button>
+      <button onclick="showSection('accomplishments')">Accomplishments</button>
+      <button onclick="showSection('impact')">Impact</button>
+    </nav>
+
+    <div class="container">
+      <img class="image" src="lbj3.jpg" alt="LeBron James" />
+
+      <div id="bio" class="content-section">
+        <h2>Biography</h2>
+        <p>
+          LeBron James was born on December 30, 1984, in Akron, Ohio. Raised by
+          a single mother, he quickly rose to fame as a high school basketball
+          prodigy. Drafted first overall in 2003 by the Cleveland Cavaliers, he
+          has since become one of the greatest players in NBA history.
+        </p>
+      </div>
+
+      <div id="accomplishments" class="content-section" style="display: none">
+        <h2>Accomplishments</h2>
+        <ul>
+          <li>4× NBA Champion</li>
+          <li>4× NBA Most Valuable Player (MVP)</li>
+          <li>NBA's All-Time Leading Scorer</li>
+          <li>2× Olympic Gold Medalist</li>
+          <li>19× NBA All-Star</li>
+          <li>Multiple NBA Finals Appearances</li>
+          <li>Philanthropist and Activist</li>
+        </ul>
+      </div>
+
+      <div id="impact" class="content-section" style="display: none">
+        <h2>Impact</h2>
+        <p>
+          Beyond basketball, LeBron has made a significant impact on society.
+          Through the LeBron James Family Foundation, he has provided
+          scholarships and built the "I PROMISE School" for underprivileged
+          children. His voice in social justice movements has also been
+          influential.
+        </p>
+      </div>
+
+      <div class="quote-section">
+        <h2>Inspirational Quote</h2>
+        <p id="quote">Click the button to get inspired!</p>
+        <button onclick="showQuote()">Show Quote</button>
+      </div>
+    </div>
   </body>
 </html>
