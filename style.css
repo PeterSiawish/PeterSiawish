@@ -1,5 +1,6 @@
 h1 {
-  color: #7ccf9e;
+  color: #000000;
   font-size: 2em;
   text-align: center;
+  text-shadow: blue 3px 3px 2cqh, red 0px 0px 25px;
 }
